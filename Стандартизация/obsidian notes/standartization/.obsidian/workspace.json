@@ -21,7 +21,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Мастер файл.md",
+                "file": "Функционал.md",
                 "mode": "source",
                 "source": false
               }
@@ -33,7 +33,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Мастер файл.md",
+                "file": "Функционал.md",
                 "mode": "source",
                 "source": false
               }
@@ -106,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Мастер файл.md",
+                "file": "Функционал.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Мастер файл.md",
+                "file": "Функционал.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Мастер файл.md"
+                "file": "Функционал.md"
               }
             }
           }
@@ -169,6 +169,6 @@
   },
   "active": "0ba46640bdf1ecb7",
   "lastOpenFiles": [
-    "Мастер файл.md"
+    "Функционал.md"
   ]
 }
