@@ -4,43 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "650374f6705aef97",
+        "id": "a185c158a2b0abcc",
         "type": "tabs",
         "children": [
           {
-            "id": "14466d41a8ab9340",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "fafeb06ba25ea039",
+            "id": "54cba7a146eda9dd",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ДЗ 1.md",
-                "mode": "preview",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "25093f570c9fee8d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ДЗ 1.md",
+                "file": "ДЗ 2.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -106,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ДЗ 1.md",
+                "file": "ДЗ 2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ДЗ 1.md",
+                "file": "ДЗ 2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ДЗ 1.md"
+                "file": "ДЗ 2.md"
               }
             }
           },
@@ -177,19 +156,30 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "25093f570c9fee8d",
+  "active": "54cba7a146eda9dd",
   "lastOpenFiles": [
-    "IMG_20230921_002823.jpg",
+    "img_dz2/Pasted image 20230928214439.png",
+    "ДЗ 2.md",
+    "img_dz2",
+    "img_dz2/Pasted image 20230928233625.png",
+    "ДЗ/CCE55430",
+    "ДЗ/ДЗ 2.xlsx",
+    "ДЗ/FD855430",
+    "ДЗ/~$ДЗ 2.xlsx",
+    "img_dz2/Pasted image 20230928231802.png",
+    "img_dz2/Pasted image 20230928231112.png",
+    "ДЗ 1.md",
+    "Pasted image 20230928231241.png",
+    "img_dz2/Pasted image 20230928225711.png",
+    "img_dz2/Pasted image 20230928224636.png",
+    "img_dz2/Pasted image 20230928223454.png",
+    "Pasted image 20230928223511.png",
+    "img_dz2/Pasted image 20230928222321.png",
+    "img_dz2/Pasted image 20230928223518.png",
     "ДЗ/Монастырский_МО_ДЗ1.pdf",
+    "img_dz1",
     "ДЗ/ДЗ 1.pdf",
     "ДЗ",
-    "Новая папка",
-    "IMG_20230921_002808.jpg",
-    "IMG_20230921_000606.jpg",
-    "ДЗ 1.md",
-    "Pasted image 20230921000121.png",
-    "Pasted image 20230920230754.png",
-    "Pasted image 20230920224859.png",
-    "Pasted image 20230920221512.png"
+    "Новая папка"
   ]
 }

@@ -4,49 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "e064344811500a0e",
+        "id": "d074e4dd78541d40",
         "type": "tabs",
         "children": [
           {
-            "id": "37b693dad476304f",
+            "id": "b1c723245a2ca66c",
             "type": "leaf",
             "state": {
               "type": "empty",
               "state": {}
-            }
-          },
-          {
-            "id": "6ea7201ad8fd4849",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Функционал.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "0ba46640bdf1ecb7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Функционал.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "5d78642ee2cdca3c",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.4.13"
-              }
             }
           }
         ]
@@ -182,7 +148,7 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "37b693dad476304f",
+  "active": "b1c723245a2ca66c",
   "lastOpenFiles": [
     "Функционал.md"
   ]
