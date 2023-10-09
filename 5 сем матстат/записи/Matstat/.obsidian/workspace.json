@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ДЗ 2.md",
+                "file": "ДЗ/ДЗ 2.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ДЗ 2.md",
+                "file": "ДЗ/ДЗ 2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ДЗ 2.md",
+                "file": "ДЗ/ДЗ 2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ДЗ 2.md"
+                "file": "ДЗ/ДЗ 2.md"
               }
             }
           },
@@ -156,13 +156,16 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "54cba7a146eda9dd",
+  "active": "d956b7d584e717d3",
   "lastOpenFiles": [
+    "img_dz2/Pasted image 20231008231844.png",
+    "ДЗ/Монастырский_МО_ДЗ1.pdf",
+    "ДЗ/ДЗ 1.md",
     "ДЗ/ДЗ 2.pdf",
+    "img_dz2/Pasted image 20231004113027.png",
+    "ДЗ/ДЗ 2.md",
     "ДЗ/2546A050",
-    "Pasted image 20231004113027.png",
     "img_dz2/IMG_20231004_094925.jpg",
-    "ДЗ 2.md",
     "img_dz2/Pasted image 20231004112219.png",
     "img_dz2/Pasted image 20231004111921.png",
     "img_dz2/Pasted image 20231004111859.png",
@@ -177,9 +180,6 @@
     "img_dz2",
     "ДЗ/CCE55430",
     "ДЗ/ДЗ 2.xlsx",
-    "ДЗ/FD855430",
-    "ДЗ 1.md",
-    "ДЗ/Монастырский_МО_ДЗ1.pdf",
-    "img_dz1"
+    "ДЗ/FD855430"
   ]
 }
