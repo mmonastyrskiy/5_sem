@@ -21,9 +21,11 @@
             "id": "5431c135d1109b17",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "img_dz2/Pasted image 20231011220253.png"
+                "file": "ДЗ/ДЗ 3.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -94,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "img_dz2/Pasted image 20231011220253.png",
+                "file": "ДЗ/ДЗ 3.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "img_dz2/Pasted image 20231011220253.png",
+                "file": "ДЗ/ДЗ 3.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +136,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "img_dz2/Pasted image 20231011220253.png"
+                "file": "ДЗ/ДЗ 3.md"
               }
             }
           },
@@ -167,8 +169,8 @@
   },
   "active": "5431c135d1109b17",
   "lastOpenFiles": [
-    "img_dz2/Pasted image 20231011220143.png",
     "img_dz2/Pasted image 20231011220253.png",
+    "img_dz2/Pasted image 20231011220143.png",
     "img_dz2/Pasted image 20231011213730.png",
     "img_dz2/Pasted image 20231004113027.png",
     "img_dz2/Pasted image 20231008231844.png",
