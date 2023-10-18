@@ -28,9 +28,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "872c064608f7a3c6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ДЗ/ДЗ 3.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -167,21 +179,20 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "5431c135d1109b17",
+  "active": "872c064608f7a3c6",
   "lastOpenFiles": [
-    "img_dz2/Pasted image 20231011220253.png",
-    "img_dz2/Pasted image 20231011220143.png",
-    "img_dz2/Pasted image 20231011213730.png",
-    "img_dz2/Pasted image 20231004113027.png",
-    "img_dz2/Pasted image 20231008231844.png",
-    "img_dz2/Pasted image 20231011165419.png",
-    "img_dz2/Pasted image 20231011173438.png",
-    "img_dz2/Pasted image 20231004110221.png",
-    "img_dz2/Pasted image 20231004103218.png",
-    "img_dz2/Pasted image 20230928220942.png",
-    "ДЗ/ДЗ 2.md",
+    "img_dz3/Pasted image 20231018232514.png",
     "ДЗ/ДЗ 3.md",
-    "img_dz3/Pasted image 20231011221617.png",
+    "img_dz3/Pasted image 20231018225333.png",
+    "img_dz3/Pasted image 20231018231443.png",
+    "img_dz3/Pasted image 20231018230740.png",
+    "img_dz3/6EEXA9JUekE.jpg",
+    "img_dz3/Pasted image 20231018223825.png",
+    "img_dz3/Pasted image 20231018222253.png",
+    "img_dz3/Pasted image 20231018221340.png",
+    "img_dz3/Pasted image 20231018204551.png",
+    "img_dz3/Pasted image 20231018202951.png",
+    "ДЗ/ДЗ 2.md",
     "img_dz3",
     "ДЗ/ДЗ 1.md",
     "ДЗ/PDF/Монастырский_МО_ДЗ2-FULL.pdf",
