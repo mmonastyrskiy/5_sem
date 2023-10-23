@@ -1,72 +1,14 @@
 {
   "main": {
-    "id": "49cf0f42d0bce2fb",
+    "id": "347a516088cdf6d4",
     "type": "split",
     "children": [
       {
-        "id": "a185c158a2b0abcc",
+        "id": "7a78b5bf5a7312d5",
         "type": "tabs",
         "children": [
           {
-            "id": "54cba7a146eda9dd",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "img_dz2/Pasted image 20231011220143.png"
-              }
-            }
-          },
-          {
-            "id": "5431c135d1109b17",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ДЗ/ДЗ 3.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "872c064608f7a3c6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ДЗ/ДЗ 3.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "68ada740c7887fdb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ДЗ/ДЗ 3.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "f235640a8e03be4b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ДЗ/ДЗ 3.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "add8129811462111",
+            "id": "1d6f43319997983b",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -77,22 +19,21 @@
               }
             }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "6f3b0aad54a061dc",
+    "id": "8854920b81ac997e",
     "type": "split",
     "children": [
       {
-        "id": "6e909e63def39c9c",
+        "id": "f5b953ab5a903ff0",
         "type": "tabs",
         "children": [
           {
-            "id": "d956b7d584e717d3",
+            "id": "b4d5c1e76d6340c6",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -102,7 +43,7 @@
             }
           },
           {
-            "id": "9586d24c2983b059",
+            "id": "7668c272aa1dd7de",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -117,7 +58,7 @@
             }
           },
           {
-            "id": "0a474c96dc6cbc83",
+            "id": "354d20690f379218",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -131,15 +72,15 @@
     "width": 300
   },
   "right": {
-    "id": "b879cb1b30fc42f5",
+    "id": "6b03c773f1951cdf",
     "type": "split",
     "children": [
       {
-        "id": "ef58053d79133d97",
+        "id": "65183f742305559c",
         "type": "tabs",
         "children": [
           {
-            "id": "bbdff5b69940b5af",
+            "id": "5160a446633b83ff",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -156,7 +97,7 @@
             }
           },
           {
-            "id": "f30b5794ec889136",
+            "id": "bd18f0009410325d",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
@@ -168,7 +109,7 @@
             }
           },
           {
-            "id": "674980bca75ab694",
+            "id": "8b80439bf321bbe9",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -179,22 +120,22 @@
             }
           },
           {
-            "id": "268d7be513f85b92",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "ДЗ/ДЗ 4.md"
-              }
-            }
-          },
-          {
-            "id": "c921d737b0711c65",
+            "id": "e172a6fdc369196b",
             "type": "leaf",
             "state": {
               "type": "all-properties",
               "state": {
                 "sortOrder": "frequency"
+              }
+            }
+          },
+          {
+            "id": "67a2aed5d20ef476",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "ДЗ/ДЗ 4.md"
               }
             }
           }
@@ -215,58 +156,15 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "add8129811462111",
+  "active": "1d6f43319997983b",
   "lastOpenFiles": [
-<<<<<<< HEAD
-    "img_dz4/Pasted image 20231020163753.png",
+    "img_dz4/Pasted image 20231024001423.png",
     "ДЗ/ДЗ 4.md",
-    "img_dz4/Pasted image 20231020164417.png",
-    "img_dz4/Pasted image 20231020164408.png",
-    "img_dz4/Pasted image 20231020164338.png",
-    "img_dz4/Pasted image 20231020164301.png",
-    "img_dz4/Pasted image 20231020164241.png",
-    "img_dz4/Pasted image 20231020164233.png",
-    "img_dz4/Pasted image 20231020164225.png",
-    "img_dz4/Pasted image 20231020164216.png",
-    "img_dz4/Pasted image 20231020164206.png",
-    "img_dz4/Pasted image 20231020164157.png",
-=======
-    "ДЗ/ppt9677.tmp",
-    "ДЗ/~$Kalashnikov group.pptx",
-    "ДЗ/Kalashnikov group.pptx",
-    "ДЗ/Презентация Microsoft PowerPoint.pptx",
-    "img_dz3/Pasted image 20231020005345.png",
-    "img_dz3/Pasted image 20231020004645.png",
-    "img_dz3/Pasted image 20231020004219.png",
-    "img_dz3/Pasted image 20231020002754.png",
-    "img_dz3/Pasted image 20231019235415.png",
-    "img_dz3/Pasted image 20231019234702.png",
-    "ДЗ/ДЗ 2.md",
-    "ДЗ/ДЗ 3.md",
-    "Без названия.md",
-    "img_dz3/Pasted image 20231018232514.png",
-    "img_dz3/Pasted image 20231018225333.png",
-    "img_dz3/Pasted image 20231018231443.png",
-    "img_dz3/Pasted image 20231018230740.png",
-    "img_dz3",
->>>>>>> 9bea320bd12e0ab4cd0d03b4d68c2e3a39e045c6
-    "ДЗ/ДЗ 1.md",
-    "ДЗ/ДЗ 2.md",
-    "ДЗ/ДЗ 3.md",
-    "img_dz4",
-    "ДЗ/PDF/Монастырский_МО_ДЗ3.pdf",
-    "ДЗ/PDF/ДЗ 3_FULL_compressed.pdf",
-    "ДЗ/PDF/ДЗ 3_FULL.pdf",
-    "img_dz3",
-    "ДЗ/PDF/Монастырский_МО_ДЗ2-FULL.pdf",
-    "ДЗ/PDF/Монастырский_МО_ДЗ1.pdf",
-    "ДЗ/PDF",
-    "Без названия 2",
-<<<<<<< HEAD
-    "Без названия 2/Без названия 1"
-=======
-    "Без названия 2/Без названия 1",
-    "Без названия 2/Без названия"
->>>>>>> 9bea320bd12e0ab4cd0d03b4d68c2e3a39e045c6
+    "img_dz4/Pasted image 20231024001401.png",
+    "img_dz4/Pasted image 20231024001339.png",
+    "img_dz4/Pasted image 20231024001327.png",
+    "img_dz4/Pasted image 20231024001315.png",
+    "img_dz4/Pasted image 20231024001256.png",
+    "img_dz4/Pasted image 20231024001234.png"
   ]
 }
