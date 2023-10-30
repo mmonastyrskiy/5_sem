@@ -17,6 +17,15 @@
 
 typedef int** Matrix;
 
+Matrix allocate_matrix(size_t N) {
+int i;
+ Matrix array = (int**)malloc(N * sizeof(int*));
+    for (i = 0; i < N; i++) {
+        array[i] = (int*)malloc(N * sizeof(int));
+    }
+	return array;
+}
+
 int* get_col_by_idx(Matrix m,int index, size_t size){
 	int i;
 	int* result = malloc(sizeof(int)* size);
@@ -42,17 +51,17 @@ int mult_rnc(int row[], int col[], size_t size){
 
 Matrix mult(Matrix m1, Matrix m2,size_t size){
 	pid_t ppid;
+	int ready;
 	pid_t pids[CHILD_AMMOUNT_PRESET];
 	int pipefd[CHILD_AMMOUNT_PRESET][2];
 	int nfds, num_open_fds;
     struct pollfd *pfds;
-    int i,row_index,j,ready;
+    int i,row_index,j;
 	int* col;
 	int semi_res[size];
     Matrix* result;
-	/*result = allocate_matrix((size_t)(size/SIZE_MULT));
+	result = allocate_matrix(size/SIZE_MULT);
 
-/*TODO: дописать логику перемножения */
 	ppid = getpid();
 
     num_open_fds = nfds = size;
@@ -74,6 +83,7 @@ Matrix mult(Matrix m1, Matrix m2,size_t size){
 		if(getpid()== ppid){
 			row_index =i;
 			pids[i] = fork();
+			dprintf(STDOUT_FILENO, "Process %d is created", i);
 			
 
 		}
@@ -96,27 +106,41 @@ Matrix mult(Matrix m1, Matrix m2,size_t size){
             exit(10);
          }
 	for(j=0;j<size;j++){
+		if(pfds[j].revents & POLLIN){
 		read(pipefd[j][0],result[j],sizeof(int)*size);
+		dprintf(STDOUT_FILENO,"Thread %d Transmitted data\n",j);
+
+	 	if(pfds[i].revents & POLLHUP){
+    	dprintf(STDOUT_FILENO,"POLLHUP\n");
+      close(pfds[i].fd);
+      pfds[i].fd = -1;
+      pfds[i].events=0;
+      num_open_fds--;
+    }
+    else if(pfds[i].revents & POLLHUP){
+    	dprintf(STDOUT_FILENO,"POLLHUP\n");
+      close(pfds[i].fd);
+      pfds[i].fd = -1;
+      pfds[i].events=0;
+      num_open_fds--;
 		
 
-			exit(0);
 
 			}
 	
 
 
 
+
+
+
+}
+}
+}
 	return result;
-
-
-
-
 }
 }
-}
-
-
-void print_matrix(Matrix* m, size_t N){
+void print_matrix(Matrix m, size_t N){
 	size_t x;
 	size_t y;
 	size_t MSIZE;
@@ -124,7 +148,7 @@ void print_matrix(Matrix* m, size_t N){
 	printf("\n");
 	for (y=0; y< MSIZE;y++){
 		for (x=0; x< MSIZE;x++){
-			printf("%d[%d][%d]|\t", m[y][x],y,x);
+			printf("%d[%ld][%ld]|\t", m[y][x],y,x);
 
 }
 	printf("\n");
@@ -151,13 +175,7 @@ void fill_matrix(Matrix m, size_t N) {
   printf("Matrix filled");
   return;
 }
-Matrix allocate_matrix(size_t N) {
- Matrix array = (int**)malloc(N * sizeof(int*));
-    for (int i = 0; i < N; i++) {
-        array[i] = (int*)malloc(N * sizeof(int));
-    }
-	return array;
-}
+
 
 int main(int argc, char const *argv[])
 {
@@ -165,6 +183,7 @@ int main(int argc, char const *argv[])
 	size_t MSIZE;
 	Matrix m1;
 	Matrix m2;
+	Matrix res;
 
 	srand(time(NULL));
 	if (argc < 2){
@@ -189,9 +208,12 @@ int main(int argc, char const *argv[])
 	print_matrix(m2,N);
 	
 	#endif
+	res = mult(m1,m2,N);
+	print_matrix(res,N);
 
-
-
+	free(res);
+	free(m1);
+	free(m2);
 
 
 
