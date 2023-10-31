@@ -49,7 +49,7 @@ int mult_rnc(int row[], int col[], size_t size){
 	return r;
 }
 
-Matrix mult(Matrix m1, Matrix m2,size_t size){
+void mult(Matrix m1, Matrix m2,Matrix res,size_t size){
 	pid_t ppid;
 	int ready;
 	pid_t pids[CHILD_AMMOUNT_PRESET];
@@ -59,13 +59,13 @@ Matrix mult(Matrix m1, Matrix m2,size_t size){
     int i,row_index,j;
 	int* col;
 	int semi_res[size];
-    Matrix* result;
-	result = allocate_matrix(size/SIZE_MULT);
+    Matrix result;
+	result = res;
 
 	ppid = getpid();
 
     num_open_fds = nfds = size;
-    pfds = calloc(nfds, sizeof(struct pollfd));
+    pfds = calloc(nfds, sizeof(struct pollfd)*CHILD_AMMOUNT_PRESET);
 	if (pfds == NULL){
 		perror("Error on calloc pollfd");
 		exit(3);
@@ -83,14 +83,18 @@ Matrix mult(Matrix m1, Matrix m2,size_t size){
 		if(getpid()== ppid){
 			row_index =i;
 			pids[i] = fork();
-			dprintf(STDOUT_FILENO, "Process %d is created", i);
+			#if DEBUG
+			dprintf(STDOUT_FILENO, "Process %d is created\n", i);
+			#endif
 			
 
 		}
-		else if (getpid == 0){
+		else{
+		if (getpid() == 0){
 		for(j=0;j<size;j++){
 			col = get_col_by_idx(m2,j,size);
 			semi_res[j]=mult_rnc(m1[row_index],col,size);
+			dprintf(STDOUT_FILENO, "Data transmitted");
 			write(pipefd[row_index][1],semi_res,sizeof(int)*size);
 			close(pipefd[row_index][0]);
 			close(pipefd[row_index][1]);
@@ -108,7 +112,9 @@ Matrix mult(Matrix m1, Matrix m2,size_t size){
 	for(j=0;j<size;j++){
 		if(pfds[j].revents & POLLIN){
 		read(pipefd[j][0],result[j],sizeof(int)*size);
+		#if DEBUG
 		dprintf(STDOUT_FILENO,"Thread %d Transmitted data\n",j);
+		#endif
 
 	 	if(pfds[i].revents & POLLHUP){
     	dprintf(STDOUT_FILENO,"POLLHUP\n");
@@ -124,7 +130,7 @@ Matrix mult(Matrix m1, Matrix m2,size_t size){
       pfds[i].events=0;
       num_open_fds--;
 		
-
+	}
 
 			}
 	
@@ -137,7 +143,6 @@ Matrix mult(Matrix m1, Matrix m2,size_t size){
 }
 }
 }
-	return result;
 }
 }
 void print_matrix(Matrix m, size_t N){
@@ -199,6 +204,7 @@ int main(int argc, char const *argv[])
 	#endif
 	m1 = allocate_matrix(N);
 	m2 = allocate_matrix(N);
+	res = allocate_matrix(N);
 	
 	fill_matrix(m1, N);
 	fill_matrix(m2, N);
@@ -208,7 +214,7 @@ int main(int argc, char const *argv[])
 	print_matrix(m2,N);
 	
 	#endif
-	res = mult(m1,m2,N);
+	mult(m1,m2,res,N);
 	print_matrix(res,N);
 
 	free(res);
