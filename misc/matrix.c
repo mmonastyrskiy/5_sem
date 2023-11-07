@@ -7,14 +7,44 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <signal.h>
+#include <unistd.h>
+#include <string.h>
 
 
 #define DEBUG 1
 #define INT_LIMIT 101
 #define CHILD_AMMOUNT_PRESET MSIZE
-#define SIZE_MULT pow(10,3)
+#define SIZE_MULT 1
 
 typedef int** Matrix;
+
+
+Matrix allocate_matrix(size_t N) {
+  int i;
+  size_t MSIZE;
+  Matrix matrix = malloc(sizeof(int*) * (N * SIZE_MULT));
+  MSIZE = N * SIZE_MULT;
+
+  if (matrix == NULL) {
+    perror("Error on malloc matrix");
+    exit(2);
+  }
+  for (i = 0; i < MSIZE; i++) {
+    matrix[i] = malloc(sizeof(int) * MSIZE);
+    if (matrix[i] == NULL) {
+      perror("Error on malloc matrix[i]");
+      for (int j = 0; j < i; j++) {
+        free(matrix[j]);
+      }
+      free(matrix);
+      exit(2);
+    }
+  }
+  #if DEBUG
+  printf("Matrix allocated\n");
+  #endif
+  return matrix;
+}
 
 
 int mult_rnc(int row[], int col[], size_t size){
@@ -26,23 +56,36 @@ int mult_rnc(int row[], int col[], size_t size){
 	}
 	return r;
 }
+int* get_col_by_idx(Matrix m,size_t index, size_t size){
+	int i;
+	int* result = malloc(sizeof(int)* size);
+	if (index > size * SIZE_MULT){
+		return NULL;
+	}
+	for(i=0;i<size*SIZE_MULT;i++){
+		result[i] = m[i][index];
+	}
+	return result;
+
+}
 
 Matrix mult(Matrix m1, Matrix m2,size_t size){
-	pid_t ppid;
-	pid_t pids[size];
+	pid_t parentpid;
+	pid_t pid[size];
 	int pipefd[size][2];
 	int nfds, num_open_fds;
-    struct pollfd *pfds;
-    int i,row_index,j;
+  struct pollfd *pfds;
+  int i,row_index,j;
 	int* col;
 	int semi_res[size];
-    Matrix result;
+  Matrix result;
+  int ready;
 	result = allocate_matrix(size/SIZE_MULT);
 
-	ppid = getpid();
+	parentpid = getpid();
 
     num_open_fds = nfds = size;
-    pfds = calloc(nfds, sizeof(struct pollfd));
+    pfds = calloc(nfds, sizeof(struct pollfd)*size);
 	if (pfds == NULL){
 		perror("Error on calloc pollfd");
 		exit(3);
@@ -54,8 +97,7 @@ Matrix mult(Matrix m1, Matrix m2,size_t size){
         }
 		pfds[i].fd = pipefd[i][0];
     pfds[i].events = POLLIN;
-    a = global_a + step * i;
-    b = global_b - step*(N-1-i);
+
         if(getpid() ==parentpid){
            pid[i] = fork();
         }
@@ -66,14 +108,13 @@ Matrix mult(Matrix m1, Matrix m2,size_t size){
             close(pipefd[i][0]);
             		for(j=0;j<size;j++){
 			col = get_col_by_idx(m2,j,size);
-			semi_res[j]=mult_rnc(m1[row_index],col,size);
+			semi_res[j]=mult_rnc(m1[i],col,size);
 		}
-            sprintf(buff,"%f",r);
-            write(pipefd[i][1],buff,sizeof(semi_res));
+            write(pipefd[i][1],semi_res,sizeof(semi_res));
             close(pipefd[i][1]);
             exit(0);
         }
-        dprintf(STDOUT_FILENO,"BORN %f %f [PID %d]\n",a,b,pid[i]);
+        dprintf(STDOUT_FILENO,"BORN [PID %d]\n",pid[i]);
         close(pipefd[i][1]);
 
 
@@ -89,10 +130,9 @@ Matrix mult(Matrix m1, Matrix m2,size_t size){
             printf("poll error");
             exit(10);
          }
-        for(i=0;i<N;i++){
+        for(i=0;i<size;i++){
             if(pfds[i].revents & POLLIN){
-              read(pipefd[i][0],buff,sizeof(int)*size);
-              result[i] = buff;
+              read(pipefd[i][0],result[i],sizeof(int)*size);
 
               if(pfds[i].revents & POLLHUP){
                 dprintf(STDOUT_FILENO,"POLLHUP\n");
@@ -115,20 +155,8 @@ Matrix mult(Matrix m1, Matrix m2,size_t size){
 	
 }
 
-int* get_col_by_idx(Matrix m,size_t index, size_t size){
-	int i;
-	int* result = malloc(sizeof(int)* size);
-	if (index > size * SIZE_MULT){
-		return NULL;
-	}
-	for(i=0;i<size*SIZE_MULT;i++){
-		result[i] = m[i][index];
-	}
-	return result;
 
-}
-
-void print_matrix(Matrix* m, size_t N){
+void print_matrix(Matrix m, size_t N){
 	size_t x;
 	size_t y;
 	size_t MSIZE;
@@ -136,7 +164,7 @@ void print_matrix(Matrix* m, size_t N){
 	printf("\n");
 	for (y=0; y< MSIZE;y++){
 		for (x=0; x< MSIZE;x++){
-			printf("%d[%d][%d]|\t", m[y][x],y,x);
+			printf("%d[%ld][%ld]|\t", m[y][x],y,x);
 
 }
 	printf("\n");
@@ -145,12 +173,12 @@ void print_matrix(Matrix* m, size_t N){
 }
 }
 
-void fill_matrix(Matrix* m, size_t N) {
+void fill_matrix(Matrix m, size_t N) {
   size_t x;
   size_t y;
   size_t MSIZE;
   MSIZE = N * SIZE_MULT;
-  srand(time(NULL));
+
   for (y = 0; y < MSIZE; y++) {
     for (x = 0; x < MSIZE; x++) {
       m[y][x] = rand() % INT_LIMIT;
@@ -159,67 +187,49 @@ void fill_matrix(Matrix* m, size_t N) {
       #endif
     }
   }
-  printf("Matrix filled");
+  printf("Matrix filled\n");
   return;
-}
-Matrix* allocate_matrix(size_t N) {
-  int i;
-  size_t MSIZE;
-  Matrix* matrix = malloc(sizeof(int*) * (N * SIZE_MULT));
-  MSIZE = N * SIZE_MULT;
-
-  if (matrix == NULL) {
-    perror("Error on malloc matrix");
-    exit(2);
-  }
-  for (i = 0; i < MSIZE; i++) {
-    matrix[i] = malloc(sizeof(int) * MSIZE);
-    if (matrix[i] == NULL) {
-      perror("Error on malloc matrix[i]");
-      for (int j = 0; j < i; j++) {
-        free(matrix[j]);
-      }
-      free(matrix);
-      exit(2);
-    }
-  }
-  #if DEBUG
-  printf("Matrix allocated");
-  #endif
-  return matrix;
 }
 int main(int argc, char const *argv[])
 {
 	size_t N;
 	size_t MSIZE;
-	Matrix* m1;
-	Matrix* m2;
+	Matrix m1;
+	Matrix m2;
+	Matrix r;
 
 
 	if (argc < 2){
-		perror("Bad usage, the correct one is ./a.out <N>");
+		perror("Bad usage, the correct one is ./a.out <N>\n");
 		 return 1;
 	}
+	srand(time(NULL));
 	N = atoi(argv[1]);
 	MSIZE = N*( unsigned long int)SIZE_MULT;
 	#if DEBUG
 	printf(" Entered N = %ld\n",N);
-	printf("%f\n",SIZE_MULT);
+	printf("%d\n",SIZE_MULT);
 	printf("%ld",MSIZE);
 	#endif
 	m1 = allocate_matrix(N);
 	m2 = allocate_matrix(N);
+	r = allocate_matrix(N);
 	
 	fill_matrix(m1, N);
 	fill_matrix(m2, N);
 	
 	#if DEBUG
-	/*print_matrix(m1,N);
-	/*print_matrix(m2,N);
-	*/
-	
+	print_matrix(m1,N);
+	print_matrix(m2,N);
 	#endif
 
+	r = mult(m1,m2,MSIZE);
+	/*print_matrix(r,N);*/
+
+
+	free(m1);
+	free(m2);
+	free(r);
 
 
 
