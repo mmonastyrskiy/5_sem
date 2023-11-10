@@ -11,16 +11,15 @@
 #include <string.h>
 
 
-#define DEBUG 1
-#define INT_LIMIT 101
-#define CHILD_AMMOUNT_PRESET MSIZE
+#define DEBUG 0
+#define INT_LIMIT 11
 #define SIZE_MULT 1
 
 typedef int** Matrix;
 
 
 Matrix allocate_matrix(size_t N) {
-  int i;
+  int i,j;
   size_t MSIZE;
   Matrix matrix = malloc(sizeof(int*) * (N * SIZE_MULT));
   MSIZE = N * SIZE_MULT;
@@ -33,7 +32,7 @@ Matrix allocate_matrix(size_t N) {
     matrix[i] = malloc(sizeof(int) * MSIZE);
     if (matrix[i] == NULL) {
       perror("Error on malloc matrix[i]");
-      for (int j = 0; j < i; j++) {
+      for (j = 0; j < i; j++) {
         free(matrix[j]);
       }
       free(matrix);
@@ -47,50 +46,53 @@ Matrix allocate_matrix(size_t N) {
 }
 
 
-int mult_rnc(int row[], int col[], size_t size){
+int mult_rnc(int row[], int* col, size_t size){
 	int i;
 	int r;
 	r = 0;
 	for(i=0;i<size;i++){
+		#if DEBUG
+		printf("[%d]{r%d,c%d}%d\n",i,row[i],col[i],row[i]*col[i]);
+		#endif
 		r += row[i]*col[i];
 	}
+	#if DEBUG
+	printf("%d\n",r);
+	#endif
 	return r;
 }
-int* get_col_by_idx(Matrix m,size_t index, size_t size){
+void get_col_by_idx(Matrix m,int* col,size_t index, size_t size){
 	int i;
-	int* result = malloc(sizeof(int)* size);
-	if (index > size * SIZE_MULT){
-		return NULL;
-	}
 	for(i=0;i<size*SIZE_MULT;i++){
-		result[i] = m[i][index];
+		#if DEBUG
+		printf("%d",m[i][index]);
+		#endif
+		col[i] = m[i][index];
 	}
-	return result;
+	printf("\n");
 
 }
 
-Matrix mult(Matrix m1, Matrix m2,size_t size){
+void mult(Matrix m1, Matrix m2,Matrix result,size_t size){
 	pid_t parentpid;
-	pid_t pid[size];
-	int pipefd[size][2];
+	pid_t pid[size*SIZE_MULT];
+	int pipefd[size*SIZE_MULT][2];
 	int nfds, num_open_fds;
   struct pollfd *pfds;
-  int i,row_index,j;
-	int* col;
-	int semi_res[size];
-  Matrix result;
+  int i,j;
+	int col[size*SIZE_MULT];
+	int semi_res[size*SIZE_MULT];
   int ready;
-	result = allocate_matrix(size/SIZE_MULT);
 
 	parentpid = getpid();
 
     num_open_fds = nfds = size;
-    pfds = calloc(nfds, sizeof(struct pollfd)*size);
+    pfds = calloc(nfds, sizeof(struct pollfd)*size*SIZE_MULT);
 	if (pfds == NULL){
 		perror("Error on calloc pollfd");
 		exit(3);
 	}
-	for(i=0;i<size;i++){
+	for(i=0;i<size*SIZE_MULT;i++){
 		if(pipe(pipefd[i])==-1){
             printf("pipe");
             exit(2);
@@ -106,15 +108,18 @@ Matrix mult(Matrix m1, Matrix m2,size_t size){
         }
         if(pid[i]==0){ /*Действия ребенка*/
             close(pipefd[i][0]);
-            		for(j=0;j<size;j++){
-			col = get_col_by_idx(m2,j,size);
-			semi_res[j]=mult_rnc(m1[i],col,size);
+            		for(j=0;j<size*SIZE_MULT;j++){
+
+			            get_col_by_idx(m2,col,j,size*SIZE_MULT);
+			            semi_res[j]=mult_rnc(m1[i],col,size*SIZE_MULT);
 		}
             write(pipefd[i][1],semi_res,sizeof(semi_res));
             close(pipefd[i][1]);
             exit(0);
         }
+        #if DEBUG
         dprintf(STDOUT_FILENO,"BORN [PID %d]\n",pid[i]);
+        #endif
         close(pipefd[i][1]);
 
 
@@ -125,29 +130,38 @@ Matrix mult(Matrix m1, Matrix m2,size_t size){
 /*Действия родителя*/
 
 	    while(num_open_fds > 0){
-        for (i = 0; i < size; i++) pfds[i].revents=0;
+        for (i = 0; i < size*SIZE_MULT; i++) pfds[i].revents=0;
          if ((ready = poll(pfds, nfds, -1)) == -1) {
             printf("poll error");
             exit(10);
          }
-        for(i=0;i<size;i++){
+        for(i=0;i<size*SIZE_MULT;i++){
             if(pfds[i].revents & POLLIN){
-              read(pipefd[i][0],result[i],sizeof(int)*size);
+            	#if DEBUG
+            	printf("POLLIN\n");
+            	#endif
+              read(pipefd[i][0],result[i],sizeof(int)*size*SIZE_MULT);
 
               if(pfds[i].revents & POLLHUP){
+              	#if DEBUG
                 dprintf(STDOUT_FILENO,"POLLHUP\n");
-                close(pfds[i].fd);
+                #endif
                 pfds[i].fd = -1;
                 pfds[i].events=0;
+                close(pfds[i].fd);
                 num_open_fds--;
+                continue;
               }
              }
              else if(pfds[i].revents & POLLHUP){
+             	#if DEBUG
                dprintf(STDOUT_FILENO,"POLLHUP\n");
-               close(pfds[i].fd);
+               #endif
                pfds[i].fd = -1;
                pfds[i].events=0;
+               close(pfds[i].fd);
                num_open_fds--;
+               continue;
                }
 
           }
@@ -193,7 +207,6 @@ void fill_matrix(Matrix m, size_t N) {
 int main(int argc, char const *argv[])
 {
 	size_t N;
-	size_t MSIZE;
 	Matrix m1;
 	Matrix m2;
 	Matrix r;
@@ -205,11 +218,8 @@ int main(int argc, char const *argv[])
 	}
 	srand(time(NULL));
 	N = atoi(argv[1]);
-	MSIZE = N*( unsigned long int)SIZE_MULT;
 	#if DEBUG
 	printf(" Entered N = %ld\n",N);
-	printf("%d\n",SIZE_MULT);
-	printf("%ld",MSIZE);
 	#endif
 	m1 = allocate_matrix(N);
 	m2 = allocate_matrix(N);
@@ -218,13 +228,11 @@ int main(int argc, char const *argv[])
 	fill_matrix(m1, N);
 	fill_matrix(m2, N);
 	
-	#if DEBUG
 	print_matrix(m1,N);
 	print_matrix(m2,N);
-	#endif
 
-	r = mult(m1,m2,MSIZE);
-	/*print_matrix(r,N);*/
+	mult(m1,m2,r,N);
+	print_matrix(r,N);
 
 
 	free(m1);
