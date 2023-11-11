@@ -8,19 +8,27 @@
         "type": "tabs",
         "children": [
           {
-            "id": "b1c723245a2ca66c",
+            "id": "d254f78d03c7232c",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "4fd665d75b77e291",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Функционал.md",
+                "file": "Без названия 1.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "abeadb1c35e4f847",
+            "id": "91fc4eff6a7c28e3",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -30,21 +38,9 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "e2447c41e99732b5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Правки ТЗ.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -110,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Правки ТЗ.md",
+                "file": "Без названия 1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Правки ТЗ.md",
+                "file": "Без названия 1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Правки ТЗ.md"
+                "file": "Без названия 1.md"
               }
             }
           },
@@ -181,10 +177,13 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "e2447c41e99732b5",
+  "active": "4fd665d75b77e291",
   "lastOpenFiles": [
+    "Без названия 1.md",
     "Без названия.md",
-    "Правки ТЗ.md",
-    "Функционал.md"
+    "Без названия 3.md",
+    "Без названия 2.md",
+    "Функционал.md",
+    "Правки ТЗ.md"
   ]
 }

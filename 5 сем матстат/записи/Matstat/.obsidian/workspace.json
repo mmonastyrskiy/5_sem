@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "7a78b5bf5a7312d5",
+        "id": "4b44c24de6df8aac",
         "type": "tabs",
         "children": [
           {
-            "id": "1d6f43319997983b",
+            "id": "bb66f8b5b966ab9e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ДЗ/ДЗ 4.md",
+                "file": "ДЗ/ДЗ 5.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ДЗ/ДЗ 4.md",
+                "file": "ДЗ/ДЗ 5.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ДЗ/ДЗ 4.md",
+                "file": "ДЗ/ДЗ 5.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -135,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ДЗ/ДЗ 4.md"
+                "file": "ДЗ/ДЗ 5.md"
               }
             }
           }
@@ -156,14 +156,17 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "1d6f43319997983b",
+  "active": "bb66f8b5b966ab9e",
   "lastOpenFiles": [
+    "Pasted image 20231108094333.png",
+    "img_dz5",
+    "ДЗ/ДЗ 4.md",
+    "ДЗ/ДЗ 5.md",
     "ДЗ/PDF/Монастырский_МО_ДЗ4.pdf",
     "ДЗ/PDF/ДЗ 4_FULL_compressed.pdf",
     "ДЗ/PDF/ДЗ 4_FULL.pdf",
     "img_dz4/Pasted image 20231024213354.png",
     "img_dz4/Pasted image 20231024213040.png",
-    "ДЗ/ДЗ 4.md",
     "img_dz4/Pasted image 20231024212324.png",
     "img_dz4/Pasted image 20231024212302.png",
     "img_dz4/Pasted image 20231024210657.png",
