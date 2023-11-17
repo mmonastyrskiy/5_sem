@@ -17,20 +17,32 @@ class Ship {
 };
 
 class Ship4 final: public Ship {
-    const short size=4;
+    public:
+    Ship4() {
+        size = 4;
+    }
 
 };
 
 class Ship3 final: public Ship {
-    const short size=3;
+    public:
+    Ship3() {
+        size = 3;
+    }
 
 };
 class Ship2 final: public Ship {
-    const short size=2;
+    public:
+    Ship2() {
+        size = 2;
+    }
 
 };
 class Ship1 final: public Ship {
-    const short size=1;
+    public:
+    Ship1() {
+        size = 1;
+    }
 };
 
 

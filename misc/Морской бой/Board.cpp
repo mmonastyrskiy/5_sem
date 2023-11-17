@@ -18,6 +18,8 @@ GameBoard::GameBoard()
 
 void GameBoard::display_field()
 {
+    for(int t=0<Y_res;t++){std::cout << t <<'\t';}
+    std::cout << std::endl;
     for(int y=0;y<Y_res;y++){
         for(int x=0;x<X_res;x++){
             std::cout << field[y][x] << '\t';
@@ -70,7 +72,7 @@ bool GameBoard::is_all_destroyed()
 void GameBoard::place(Ship ship)
 {
     coords x,y,rotation,fin,t;
-    std::cout << "Введите координаты для " << ship.size << "-х палубного коробляя :";
+    std::cout << "Введите координаты для " << ship.size<< "-х палубного коробляя :";
     std::cin >> x >> y;
 
     if ((x > X_res) || (y > Y_res)){
