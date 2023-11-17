@@ -6,7 +6,7 @@
 #include <string>
 class GameBoard final{
 public:
-char** field;
+char field[10][10];
 std::map<std::string, char> possible_status = {
     {"EMPTY_CELL",'.'},
     {"KILLED_CELL",'X'},
