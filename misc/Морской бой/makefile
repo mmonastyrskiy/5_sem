@@ -3,6 +3,7 @@ SOURCE	= Board.cpp Game.cpp main.cpp
 HEADER	= Board.hpp Game.hpp 
 OUT	= morscoyboy.exe
 CC	 = g++
+CC2  = x86_64-w64-mingw32-gcc 
 FLAGS	 = -g -c -Wall
 LFLAGS	 = 
 
@@ -24,3 +25,6 @@ main.o: main.cpp
 
 clean:
 	rm -f $(OBJS) $(OUT)
+all-windows: $(OBJS)
+	$(CC2) -o $(OUT) $(OBJS)
+

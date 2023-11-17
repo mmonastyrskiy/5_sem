@@ -1,4 +1,4 @@
-#pragma once
+
 #define X_res 10
 #define Y_res 10
 #include "Game.hpp"
@@ -71,7 +71,7 @@ void GameBoard::place(Ship ship)
 {
     coords x,y,rotation,fin,t;
     std::cout << "Введите координаты для " << ship.size << "-х палубного коробляя :";
-    std::cin >> x,y;
+    std::cin >> x >> y;
 
     if ((x > X_res) || (y > Y_res)){
         std::cout << "Координаты не пренадлежат области поля, попробуйте снова";
@@ -94,11 +94,13 @@ void GameBoard::place(Ship ship)
     case 1:
 
         fin = y-ship.size-1;
-        while(t = y >= fin){
+        t = y;
+        while(t >= fin){
             if(is_ship(x,t) || t > Y_res){break;}
             t--;
         }
-        while(t = y >= fin){
+        t = y;
+        while(t >= fin){
             field[t][x] = possible_status["SHIP_CELL"];
             t--;
         }
@@ -107,11 +109,13 @@ void GameBoard::place(Ship ship)
         
     case 2:
         fin = y+ship.size-1;
-        while(t = y <= fin){
+        t=y;
+        while(t <= fin){
             if(is_ship(x,t) || t > Y_res){break;}
             t++;
         }
-        while(t = y <= fin){
+        t=y;
+        while(t <= fin){
             field[t][x] = possible_status["SHIP_CELL"];
             t++;
         }
@@ -120,11 +124,13 @@ void GameBoard::place(Ship ship)
     case 3:
 
         fin = x-ship.size-1;
-        while(t = x >= fin){
+        t=x;
+        while(t >= fin){
             if(is_ship(t,y) || t > X_res){break;}
             t--;
         }
-        while(t = x >= fin){
+        t=x;
+        while(t >= fin){
             field[y][t] = possible_status["SHIP_CELL"];
             t--;
         }
@@ -133,11 +139,13 @@ void GameBoard::place(Ship ship)
     case 4:
     
         fin = x+ship.size-1;
-        while(t = x <= fin){
+        t=x;
+        while(t <= fin){
             if(is_ship(t,y) || t > X_res){break;}
             t--;
         }
-        while(t = x <= fin){
+        t=x;
+        while(t <= fin){
             field[y][t] = possible_status["SHIP_CELL"];
             t--;
         }

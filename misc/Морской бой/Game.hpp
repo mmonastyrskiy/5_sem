@@ -1,4 +1,4 @@
-#pragma once
+
 #include "Board.hpp"
 #define X_res 10
 #define Y_res 10

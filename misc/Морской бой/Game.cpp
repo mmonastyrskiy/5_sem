@@ -1,4 +1,4 @@
-#pragma once
+
 #include "Game.hpp"
 #include <iostream>
 
@@ -20,7 +20,7 @@ void Game::Tick(){
     coords x,y;
     active_player->display_field();
     std::cout << "Игрок, стреляйте, введите координаты :";
-    std::cin >> x,y;
+    std::cin >> x >> y;
     if ((x > X_res) || (y > Y_res)){
         std::cout << "Введены неверные координаты" << std::endl;
         return;

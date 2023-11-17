@@ -1,4 +1,4 @@
-#pragma once
+
 #include <map>
 #include <string>
 using coords = unsigned short; 
@@ -42,7 +42,7 @@ char field[10][10];
 std::map<std::string, char> possible_status = {
     {"EMPTY_CELL",'.'},
     {"KILLED_CELL",'X'},
-    {"SHIP_CELL",'□'}
+    {"SHIP_CELL",'0'}
 
 };
 Ship ships[10];
