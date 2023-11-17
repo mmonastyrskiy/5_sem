@@ -4,15 +4,12 @@
 using coords = unsigned short; 
 enum class Rotation {UP,DOWN,LEFT,RIGHT};
 
-class Ship {
+struct Ship {
     public:
     short size;
     Rotation rotation;
     coords x,y;
 
-    
-
-    Ship(){};
 
 };
 

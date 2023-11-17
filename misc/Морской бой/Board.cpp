@@ -18,7 +18,7 @@ GameBoard::GameBoard()
 
 void GameBoard::display_field()
 {
-    for(int t=0<Y_res;t++){std::cout << t <<'\t';}
+    for(int t=0<Y_res;t++;){std::cout << t <<'\t';}
     std::cout << std::endl;
     for(int y=0;y<Y_res;y++){
         for(int x=0;x<X_res;x++){
