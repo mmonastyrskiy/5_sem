@@ -1,7 +1,9 @@
-#include "Board.hpp"
+#pragma once
+#define X_res 10
+#define Y_res 10
 #include "Game.hpp"
-#include "Ship.hpp"
 #include <iostream>
+
 GameBoard::GameBoard()
 {
 
@@ -47,7 +49,7 @@ void GameBoard::init_field()
 
 for(auto ship: ships){
     display_field();
-    ship.place(this);
+    place(ship);
 }
 }
 
@@ -64,4 +66,84 @@ bool GameBoard::is_all_destroyed()
 
     }
     return false;
+}
+void GameBoard::place(Ship ship)
+{
+    coords x,y,rotation,fin,t;
+    std::cout << "Введите координаты для " << ship.size << "-х палубного коробляя :";
+    std::cin >> x,y;
+
+    if ((x > X_res) || (y > Y_res)){
+        std::cout << "Координаты не пренадлежат области поля, попробуйте снова";
+        place(ship);
+    }
+    else if (is_ship(x,y)){
+        std::cout << "В указанных координатах уже находится корабль, попробуйте снова";
+        place(ship);
+
+    }
+    std::cout << "Введите ротацию для " << ship.size << "-х палубного коробляя зная что:\n 1-ВВЕРХ\n2-ВНИЗ\n3-ВЛЕВО\n 4-ВПРАВО:";
+    std::cin >> rotation;
+    if(rotation > 4 || rotation < 1){
+        std::cout << "Неверная ротация, попробуйте снова";
+        place(ship);
+    }
+
+    switch (rotation){
+
+    case 1:
+
+        fin = y-ship.size-1;
+        while(t = y >= fin){
+            if(is_ship(x,t) || t > Y_res){break;}
+            t--;
+        }
+        while(t = y >= fin){
+            field[t][x] = possible_status["SHIP_CELL"];
+            t--;
+        }
+        ship.rotation = Rotation::UP;
+        return;
+        
+    case 2:
+        fin = y+ship.size-1;
+        while(t = y <= fin){
+            if(is_ship(x,t) || t > Y_res){break;}
+            t++;
+        }
+        while(t = y <= fin){
+            field[t][x] = possible_status["SHIP_CELL"];
+            t++;
+        }
+        ship.rotation = Rotation::DOWN;
+        return;
+    case 3:
+
+        fin = x-ship.size-1;
+        while(t = x >= fin){
+            if(is_ship(t,y) || t > X_res){break;}
+            t--;
+        }
+        while(t = x >= fin){
+            field[y][t] = possible_status["SHIP_CELL"];
+            t--;
+        }
+        ship.rotation = Rotation::LEFT;
+        return;
+    case 4:
+    
+        fin = x+ship.size-1;
+        while(t = x <= fin){
+            if(is_ship(t,y) || t > X_res){break;}
+            t--;
+        }
+        while(t = x <= fin){
+            field[y][t] = possible_status["SHIP_CELL"];
+            t--;
+        }
+        ship.rotation = Rotation::RIGHT;
+        return;
+    }
+        std::cout << "ой, корабль не поместился, попробуйте снова";
+        place(ship);
 }

@@ -1,5 +1,5 @@
+#pragma once
 #include "Game.hpp"
-#include "Board.hpp"
 #include <iostream>
 
 bool Game::Game_ended()

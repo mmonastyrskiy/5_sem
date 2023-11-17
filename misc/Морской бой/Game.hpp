@@ -1,8 +1,8 @@
+#pragma once
 #include "Board.hpp"
-
 #define X_res 10
 #define Y_res 10
-using coords = unsigned short; 
+
 
 
 enum class Gamestate {Player1_won, Player2_won, in_progeress};
