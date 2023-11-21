@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "4b44c24de6df8aac",
+        "id": "b2d86f5dac1784d1",
         "type": "tabs",
         "children": [
           {
-            "id": "bb66f8b5b966ab9e",
+            "id": "934a5f0cad9e4656",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ДЗ/ДЗ 5.md",
+                "file": "ДЗ/ДЗ 6.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ДЗ/ДЗ 5.md",
+                "file": "ДЗ/ДЗ 6.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ДЗ/ДЗ 5.md",
+                "file": "ДЗ/ДЗ 6.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -135,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ДЗ/ДЗ 5.md"
+                "file": "ДЗ/ДЗ 6.md"
               }
             }
           }
@@ -156,27 +156,31 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "bb66f8b5b966ab9e",
+  "active": "934a5f0cad9e4656",
   "lastOpenFiles": [
+    "ДЗ/PDF/Монастырский_МО_ДЗ6.pdf",
+    "ДЗ/PDF/ДЗ 6_FULL_compressed.pdf",
+    "ДЗ/PDF/ДЗ 6_FULL.pdf",
+    "ДЗ/PDF/ДЗ 6.pdf",
+    "img_dz6/Pasted image 20231121170904.png",
+    "ДЗ/ДЗ 6.md",
+    "img_dz6/Pasted image 20231121174912.png",
+    "img_dz6/Pasted image 20231121174415.png",
+    "img_dz6/Pasted image 20231121174408.png",
+    "img_dz6/Pasted image 20231121173131.png",
+    "img_dz6/Pasted image 20231121173123.png",
+    "img_dz6/Pasted image 20231121171626.png",
+    "img_dz6/Pasted image 20231121155154.png",
+    "img_dz6/Pasted image 20231121155721.png",
+    "img_dz6/Pasted image 20231121155657.png",
+    "img_dz6",
+    "ДЗ/ДЗ 5.md",
     "ДЗ/PDF/Монастырский_МО_ДЗ5.pdf",
     "ДЗ/PDF/ДЗ 5_FULL_compressed.pdf",
     "ДЗ/PDF/ДЗ 5_FULL.pdf",
     "ДЗ/PDF/ДЗ 5.pdf",
-    "img_dz5/Pasted image 20231121153213.png",
-    "ДЗ/ДЗ 5.md",
-    "img_dz5/Pasted image 20231121152619.png",
-    "img_dz5/Pasted image 20231121152612.png",
-    "img_dz5/Pasted image 20231121144140.png",
-    "img_dz5/Pasted image 20231121143108.png",
-    "img_dz5/Pasted image 20231121141509.png",
-    "img_dz5/Pasted image 20231121141504.png",
-    "img_dz5/Pasted image 20231121141458.png",
-    "img_dz5/Pasted image 20231121134854.png",
-    "img_dz5/Pasted image 20231121134849.png",
     "img_dz5",
     "ДЗ/ДЗ 4.md",
-    "ДЗ/PDF/Монастырский_МО_ДЗ4.pdf",
-    "ДЗ/PDF/ДЗ 4_FULL_compressed.pdf",
-    "ДЗ/PDF/ДЗ 4_FULL.pdf"
+    "ДЗ/PDF/Монастырский_МО_ДЗ4.pdf"
   ]
 }
