@@ -1,18 +1,22 @@
 {
   "main": {
-    "id": "347a516088cdf6d4",
+    "id": "0019b33e9800ad62",
     "type": "split",
     "children": [
       {
-        "id": "074dd73d3ef4f405",
+        "id": "2709ba6b2f8cd785",
         "type": "tabs",
         "children": [
           {
-            "id": "166d6900875d6207",
+            "id": "5a6c3e1ccb707719",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "4. Меры по ПОДФТ.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -21,15 +25,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "8854920b81ac997e",
+    "id": "559e01ac92de94a5",
     "type": "split",
     "children": [
       {
-        "id": "f5b953ab5a903ff0",
+        "id": "3e5893400a3a0530",
         "type": "tabs",
         "children": [
           {
-            "id": "b4d5c1e76d6340c6",
+            "id": "e6e02c3df5b2ba86",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -39,7 +43,7 @@
             }
           },
           {
-            "id": "7668c272aa1dd7de",
+            "id": "869733bb7dbba6fa",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -54,7 +58,7 @@
             }
           },
           {
-            "id": "354d20690f379218",
+            "id": "5c2998fa8bc4ece5",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -68,19 +72,20 @@
     "width": 300
   },
   "right": {
-    "id": "6b03c773f1951cdf",
+    "id": "a259b8ba6d7a2f53",
     "type": "split",
     "children": [
       {
-        "id": "65183f742305559c",
+        "id": "62ff333d6d72217d",
         "type": "tabs",
         "children": [
           {
-            "id": "5160a446633b83ff",
+            "id": "b71fd1927debd7ce",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
+                "file": "4. Меры по ПОДФТ.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -92,18 +97,19 @@
             }
           },
           {
-            "id": "bd18f0009410325d",
+            "id": "be24d9777d009a78",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "4. Меры по ПОДФТ.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "8b80439bf321bbe9",
+            "id": "6fdb309e58fae3f0",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -114,21 +120,13 @@
             }
           },
           {
-            "id": "e172a6fdc369196b",
-            "type": "leaf",
-            "state": {
-              "type": "all-properties",
-              "state": {
-                "sortOrder": "frequency"
-              }
-            }
-          },
-          {
-            "id": "67a2aed5d20ef476",
+            "id": "a95a4ddfc3af2bc3",
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "4. Меры по ПОДФТ.md"
+              }
             }
           }
         ]
@@ -145,33 +143,35 @@
       "canvas:Создать новый холст": false,
       "daily-notes:Сегодняшняя заметка": false,
       "templates:Вставить шаблон": false,
-      "command-palette:Открыть палитру команд": false
+      "command-palette:Открыть палитру команд": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "166d6900875d6207",
+  "active": "5a6c3e1ccb707719",
   "lastOpenFiles": [
-    "img_dz6/Pasted image 20231121174912.png",
-    "ДЗ/ДЗ 6.md",
-    "ДЗ/PDF/Монастырский_МО_ДЗ6.pdf",
-    "ДЗ/PDF/ДЗ 6_FULL_compressed.pdf",
-    "ДЗ/PDF/ДЗ 6_FULL.pdf",
-    "ДЗ/PDF/ДЗ 6.pdf",
-    "img_dz6/Pasted image 20231121170904.png",
-    "img_dz6/Pasted image 20231121174415.png",
-    "img_dz6/Pasted image 20231121174408.png",
-    "img_dz6/Pasted image 20231121173131.png",
-    "img_dz6/Pasted image 20231121173123.png",
-    "img_dz6/Pasted image 20231121171626.png",
-    "img_dz6/Pasted image 20231121155154.png",
-    "img_dz6/Pasted image 20231121155721.png",
-    "img_dz6/Pasted image 20231121155657.png",
-    "img_dz6",
-    "ДЗ/ДЗ 5.md",
-    "ДЗ/PDF/Монастырский_МО_ДЗ5.pdf",
-    "ДЗ/PDF/ДЗ 5_FULL_compressed.pdf",
-    "ДЗ/PDF/ДЗ 5_FULL.pdf",
-    "ДЗ/PDF/ДЗ 5.pdf",
-    "img_dz5",
-    "ДЗ/ДЗ 4.md"
+    "3. Внедрено ли ПФРОМУ.md",
+    "5. Идентификация.md",
+    "2. Ответственность за ПОДФТ.md",
+    "1. Законодательная база ПОДФТ.md",
+    "Сравнение.canvas",
+    "1. РФ.md",
+    "Сравнение.md",
+    "Сравнение.pdf",
+    "99. Иные вопросы.md",
+    "[.md",
+    "Pasted image 20231121201751.png",
+    "7. Обязательный контроль.md",
+    "8.  Пороговые суммы.md",
+    "9. Операции подлежащие ОК вне зависимости от суммы.md",
+    "10. срок предоставления сведений.md",
+    "11. Субъекты ПФМ.md",
+    "12. Участники системы ПОДФТ.md",
+    "13. Независим ли уполномоченный орган.md",
+    "14. История НС.md",
+    "15-18 Инструменты ПОДФТФРОМУ.md",
+    "20. Спец категории лиц.md",
+    "6. Есть ли представитель клиента.md",
+    "4. Меры по ПОДФТ.md",
+    "Вопросы"
   ]
 }
