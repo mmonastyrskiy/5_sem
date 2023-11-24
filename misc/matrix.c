@@ -28,6 +28,7 @@ Matrix allocate_matrix(size_t N) {
     perror("Error on malloc matrix");
     exit(2);
   }
+
   for (i = 0; i < MSIZE; i++) {
     matrix[i] = malloc(sizeof(int) * MSIZE);
     if (matrix[i] == NULL) {
@@ -86,7 +87,7 @@ void mult(Matrix m1, Matrix m2,Matrix result,size_t size){
 
 	parentpid = getpid();
 
-    num_open_fds = nfds = size;
+    num_open_fds = nfds = size*SIZE_MULT;
     pfds = calloc(nfds, sizeof(struct pollfd)*size*SIZE_MULT);
 	if (pfds == NULL){
 		perror("Error on calloc pollfd");
@@ -94,7 +95,7 @@ void mult(Matrix m1, Matrix m2,Matrix result,size_t size){
 	}
 	for(i=0;i<size*SIZE_MULT;i++){
 		if(pipe(pipefd[i])==-1){
-            printf("pipe");
+            perror("pipe");
             exit(2);
         }
 		pfds[i].fd = pipefd[i][0];
@@ -106,6 +107,7 @@ void mult(Matrix m1, Matrix m2,Matrix result,size_t size){
         if(pid[i]==-1){
             exit(3);
         }
+
         if(pid[i]==0){ /*Действия ребенка*/
             close(pipefd[i][0]);
             		for(j=0;j<size*SIZE_MULT;j++){
@@ -135,6 +137,7 @@ void mult(Matrix m1, Matrix m2,Matrix result,size_t size){
             printf("poll error");
             exit(10);
          }
+         
         for(i=0;i<size*SIZE_MULT;i++){
             if(pfds[i].revents & POLLIN){
             	#if DEBUG
@@ -204,6 +207,7 @@ void fill_matrix(Matrix m, size_t N) {
   printf("Matrix filled\n");
   return;
 }
+
 int main(int argc, char const *argv[])
 {
 	size_t N;
@@ -216,15 +220,20 @@ int main(int argc, char const *argv[])
 		perror("Bad usage, the correct one is ./a.out <N>\n");
 		 return 1;
 	}
+
 	srand(time(NULL));
+
 	N = atoi(argv[1]);
+
 	#if DEBUG
 	printf(" Entered N = %ld\n",N);
 	#endif
+
 	m1 = allocate_matrix(N);
 	m2 = allocate_matrix(N);
 	r = allocate_matrix(N);
 	
+
 	fill_matrix(m1, N);
 	fill_matrix(m2, N);
 	
