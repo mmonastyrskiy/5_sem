@@ -23,11 +23,9 @@
             "id": "9e28d5b645678c11",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Беларусь/Беларусь.md",
-                "mode": "source",
-                "source": false
+                "file": "Zakon_RT_PODFT_FROMP_2023_ru.pdf"
               }
             }
           }
@@ -98,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Беларусь/Беларусь.md",
+                "file": "Zakon_RT_PODFT_FROMP_2023_ru.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Беларусь/Беларусь.md",
+                "file": "Zakon_RT_PODFT_FROMP_2023_ru.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +136,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Беларусь/Беларусь.md"
+                "file": "Zakon_RT_PODFT_FROMP_2023_ru.pdf"
               }
             }
           }
@@ -160,33 +158,68 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "9e28d5b645678c11",
+  "floating": {
+    "id": "aa97e213a7ee9c3f",
+    "type": "floating",
+    "children": [
+      {
+        "id": "5d25fd9fce2e418a",
+        "type": "window",
+        "children": [
+          {
+            "id": "edbab01dc1c57dff",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "2f89a4bb29065b71",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "Zakon_RT_PODFT_FROMP_2023_ru.pdf"
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 256,
+        "y": 8,
+        "width": 1024,
+        "height": 800,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "2f89a4bb29065b71",
   "lastOpenFiles": [
+    "7. Обязательный контроль.md",
+    "5. Идентификация.md",
+    "4. Меры по ПОДФТ.md",
+    "13. Независим ли уполномоченный орган.md",
+    "14. История НС.md",
     "15-18 Инструменты ПОДФТФРОМУ.md",
+    "20. Спец категории лиц.md",
+    "99. Иные вопросы.md",
     "Беларусь/Беларусь.md",
     "Беларусь",
     "Zakon_RT_PODFT_FROMP_2023_ru.pdf",
-    "20. Спец категории лиц.md",
     "12. Участники системы ПОДФТ.md",
     "11. Субъекты ПФМ.md",
     "1. Законодательная база ПОДФТ.md",
-    "13. Независим ли уполномоченный орган.md",
     "10. срок предоставления сведений.md",
     "9. Операции подлежащие ОК вне зависимости от суммы.md",
     "8.  Пороговые суммы.md",
-    "7. Обязательный контроль.md",
     "3. Внедрено ли ПФРОМУ.md",
     "6. Есть ли представитель клиента.md",
-    "5. Идентификация.md",
-    "4. Меры по ПОДФТ.md",
     "2. Ответственность за ПОДФТ.md",
-    "14. История НС.md",
     "Pasted image 20231124212244.png",
     "Сравнение.canvas",
     "1. РФ.md",
     "Сравнение.md",
     "Сравнение.pdf",
-    "99. Иные вопросы.md",
     "[.md",
     "Pasted image 20231121201751.png",
     "Вопросы"
